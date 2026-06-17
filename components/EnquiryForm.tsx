@@ -43,7 +43,7 @@ export default function EnquiryForm({
             ...form
         }),
     })
-    const data = res.json();
+    const data =await res.json();
     if(!res.ok){
         setError(data.error ?? 'Something went wrong');
         setLoading(false)
