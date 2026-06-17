@@ -12,6 +12,7 @@ type Listing = {
   bedrooms: number;
   bathrooms: number;
   area_sqft: number;
+  image_url: string;
   amenities: string[];
   similarity: number;
 };
