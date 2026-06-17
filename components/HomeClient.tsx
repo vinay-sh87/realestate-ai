@@ -8,19 +8,20 @@ import dynamic from 'next/dynamic'
 const MapView = dynamic(() => import('./MapView'), { ssr: false })
 
 type Listing = {
-  id: string
-  title: string
-  description: string
-  price: number
-  location: string
-  property_type: string
-  bedrooms: number
-  bathrooms: number
-  area_sqft: number
-  amenities: string[]
-  lat: number
-  lng: number
-}
+  id: string;
+  title: string;
+  description: string;
+  price: number;
+  location: string;
+  property_type: string;
+  bedrooms: number;
+  bathrooms: number;
+  area_sqft: number;
+  amenities: string[];
+  image_url: string;
+  lat: number;
+  lng: number;
+};
 
 export default function HomeClient({
   listings,
