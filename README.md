@@ -6,6 +6,8 @@ the app uses OpenAI embeddings and vector similarity search to recommend
 properties based on semantic meaning — so "2BHK near metro" and "apartment
 close to subway" are correctly identified as similar.
 
+## Live Demo
+**Public URL:** [https://realestate-ai-embed.vercel.app](https://realestate-ai-embed.vercel.app)
 ## Features
 
 - **AI Recommendations** — Semantic similarity search using OpenAI embeddings
