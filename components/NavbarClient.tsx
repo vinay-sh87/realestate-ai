@@ -111,34 +111,13 @@ export default function NavbarClient({ user }: { user: User | null }) {
         Sign up
       </Link>
 
-      {/* Mobile menu button */}
-      <button
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="md:hidden p-2 text-gray-700 hover:text-gray-900"
+      {/* Mobile view - Sign in button only */}
+      <Link
+        href="/login"
+        className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors md:hidden"
       >
-        {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-      </button>
-
-      {/* Mobile dropdown menu */}
-      {isMenuOpen && (
-        <div className="absolute top-16 right-6 md:hidden bg-white border border-gray-200 rounded-lg shadow-lg py-2 w-48 z-50">
-          <Link
-            href="/"
-            onClick={handleNavClick}
-            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
-          >
-            Browse
-          </Link>
-          <hr className="my-2" />
-          <Link
-            href="/login"
-            onClick={handleNavClick}
-            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
-          >
-            Sign in
-          </Link>
-        </div>
-      )}
+        Sign in
+      </Link>
     </div>
   );
 }
