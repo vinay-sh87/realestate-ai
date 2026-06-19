@@ -1,10 +1,12 @@
-import Link from 'next/link'
-import { createServerSupabaseClient } from '@/lib/supabase-server'
-import NavbarClient from './NavbarClient'
+import Link from "next/link";
+import { createServerSupabaseClient } from "@/lib/supabase-server";
+import NavbarClient from "./NavbarClient";
 
 export default async function Navbar() {
-  const supabase = await createServerSupabaseClient()
-  const { data: { user } } = await supabase.auth.getUser()
+  const supabase = await createServerSupabaseClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
 
   return (
     <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -19,17 +21,26 @@ export default async function Navbar() {
           </span>
         </Link>
 
-        {/* Nav Links */}
+        {/* Nav Links - Desktop */}
         <div className="hidden md:flex items-center gap-6">
-          <Link href="/" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+          <Link
+            href="/"
+            className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+          >
             Browse
           </Link>
           {user && (
             <>
-              <Link href="/saved" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+              <Link
+                href="/saved"
+                className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+              >
                 Saved
               </Link>
-              <Link href="/listings/new" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+              <Link
+                href="/listings/new"
+                className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+              >
                 List Property
               </Link>
             </>
@@ -40,5 +51,5 @@ export default async function Navbar() {
         <NavbarClient user={user} />
       </div>
     </nav>
-  )
+  );
 }
