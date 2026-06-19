@@ -114,7 +114,7 @@ export default function NavbarClient({ user }: { user: User | null }) {
       {/* Mobile view - Sign in button only */}
       <Link
         href="/login"
-        className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors md:hidden"
+        className="text-sm bg-black/90 font-medium text-gray-700 hover:text-gray-900 transition-colors md:hidden"
       >
         Sign in
       </Link>
